@@ -1,0 +1,15 @@
+.analytics-kpis {
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; margin-bottom: 24px;
+}
+@media (max-width: 1100px) { .analytics-kpis { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 600px)  { .analytics-kpis { grid-template-columns: repeat(2, 1fr); } }
+
+.analytics-charts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 4px; }
+@media (max-width: 860px) { .analytics-charts { grid-template-columns: 1fr; } }
+
+.bar-chart { display: flex; flex-direction: column; gap: 14px; }
+.bar-row { display: flex; align-items: center; gap: 12px; }
+.bar-label { font-size: 0.78rem; color: var(--admin-muted); min-width: 150px; flex-shrink: 0; }
+.bar-track { flex: 1; height: 10px; background: var(--admin-surface); border-radius: 5px; overflow: hidden; border: 1px solid var(--admin-border); }
+.bar-fill  { height: 100%; border-radius: 5px; transition: width 0.8s cubic-bezier(0.4,0,0.2,1); }
+.bar-value { font-size: 0.82rem; color: var(--admin-text); font-weight: 700; min-width: 24px; text-align: right; }

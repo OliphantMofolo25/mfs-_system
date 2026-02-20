@@ -1,0 +1,40 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper: check if user is a loan officer
+    function isOfficer() {
+      return request.auth != null &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'officer';
+    }
+
+    // Helper: check if user owns this resource
+    function isOwner(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+
+    // ── users collection ──────────────────────────────────
+    match /users/{userId} {
+      // Users can read and write their own profile
+      allow read, write: if isOwner(userId);
+      // Officers can read all profiles
+      allow read: if isOfficer();
+    }
+
+    // ── loan_applications collection ──────────────────────
+    match /loan_applications/{appId} {
+      // Applicants can create their own application
+      allow create: if request.auth != null
+        && request.resource.data.applicantId == request.auth.uid;
+
+      // Applicants can only read their own; officers read all
+      allow read: if isOwner(resource.data.applicantId) || isOfficer();
+
+      // Only officers can update (override decisions)
+      allow update: if isOfficer();
+
+      // No one can delete
+      allow delete: if false;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.detail-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; flex-wrap: wrap; gap: 16px; }
+.back-link { font-size: 0.85rem; color: var(--gold); display: inline-flex; align-items: center; gap: 4px; }
+.back-link:hover { color: var(--gold-light); }
+
+.decision-box {
+  border-radius: var(--radius-md); padding: 28px; display: flex; align-items: flex-start;
+  gap: 20px; margin-bottom: 8px; border: 1px solid;
+}
+.decision-box-icon { font-size: 2rem; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700; }
+.decision-success { background: var(--success-bg); border-color: #a8d5bf; }
+.decision-success .decision-box-icon { background: var(--success); color: white; }
+.decision-success h3 { color: var(--success); }
+.decision-warn { background: var(--warn-bg); border-color: #f0d080; }
+.decision-warn .decision-box-icon { background: var(--warn); color: white; }
+.decision-warn h3 { color: var(--warn); }
+.decision-danger { background: var(--danger-bg); border-color: #e5a0a0; }
+.decision-danger .decision-box-icon { background: var(--danger); color: white; }
+.decision-danger h3 { color: var(--danger); }
+.decision-gray { background: var(--gray-100); border-color: var(--gray-200); }
+
+.reason-list { margin-top: 10px; padding-left: 18px; }
+.reason-list li { font-size: 0.88rem; color: var(--gray-600); margin-bottom: 4px; }
+.officer-note { margin-top: 12px; font-size: 0.88rem; background: rgba(0,0,0,0.04); padding: 10px 14px; border-radius: var(--radius-sm); color: var(--gray-800); }
+
+.summary-stat { background: var(--gray-100); border-radius: var(--radius-sm); padding: 16px 20px; display: flex; flex-direction: column; gap: 4px; }
+.summary-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-400); }
+.summary-value { font-family: var(--font-display); font-size: 1.2rem; color: var(--navy); }
+
+.info-row { padding: 12px 0; border-bottom: 1px solid var(--gray-200); display: flex; flex-direction: column; gap: 4px; }
+.info-row:last-child { border-bottom: none; }
+.info-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gray-400); }
+.info-value { font-size: 0.92rem; color: var(--gray-800); text-transform: capitalize; }

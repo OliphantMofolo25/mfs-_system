@@ -1,0 +1,100 @@
+.app-form-header { margin-bottom: 32px; }
+.app-form-header h2 { margin-bottom: 6px; }
+.step-title { font-family: var(--font-display); color: var(--navy); margin-bottom: 24px; font-size: 1.2rem; }
+.form-nav { display: flex; align-items: center; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--gray-200); gap: 12px; }
+
+/* ── Autofill styles ── */
+.autofill-notice {
+  background: #eff6ff; border: 1px solid #bfdbfe; border-radius: var(--radius-sm);
+  padding: 10px 14px; font-size: 0.82rem; color: #1e40af;
+  margin-bottom: 20px; font-weight: 500;
+}
+.autofill-tag {
+  display: inline-block; background: #dbeafe; color: #1e40af;
+  font-size: 0.65rem; font-weight: 700; padding: 2px 7px; border-radius: 10px;
+  margin-left: 8px; text-transform: uppercase; letter-spacing: 0.04em; vertical-align: middle;
+}
+.label-optional { font-size: 0.72rem; color: #9ca3af; font-weight: 400; margin-left: 6px; }
+
+/* ── Smart hints ── */
+.smart-hint {
+  background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: var(--radius-sm);
+  padding: 8px 12px; font-size: 0.78rem; color: #166534; margin-top: 6px;
+  display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap;
+}
+.hint-apply {
+  background: #166534; color: white; border: none; border-radius: 4px;
+  padding: 3px 10px; font-size: 0.74rem; font-weight: 700; cursor: pointer;
+  font-family: var(--font-body); white-space: nowrap; flex-shrink: 0;
+}
+.hint-apply:hover { background: #14532d; }
+
+/* ── Credit score input row ── */
+.credit-input-row { display: flex; gap: 8px; align-items: stretch; }
+.credit-input-row .form-input { flex: 1; }
+.btn-estimate-credit {
+  background: var(--navy); color: white; border: none;
+  padding: 0 14px; border-radius: var(--radius-sm); font-family: var(--font-body);
+  font-size: 0.78rem; font-weight: 600; cursor: pointer; white-space: nowrap;
+  transition: var(--transition);
+}
+.btn-estimate-credit:hover { background: var(--navy-mid); }
+
+/* ── Credit indicator bar ── */
+.credit-indicator {
+  margin-top: 6px; padding: 6px 12px; border-radius: var(--radius-sm);
+  font-size: 0.78rem; font-weight: 600;
+}
+.credit-indicator.good { background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+.credit-indicator.fair { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+.credit-indicator.poor { background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+
+/* ── Repayment preview card ── */
+.repayment-preview {
+  background: #f8faff; border: 1px solid #c7d2fe; border-radius: var(--radius-sm);
+  padding: 16px 20px; margin-bottom: 20px;
+}
+.repayment-preview-row {
+  display: flex; justify-content: space-between; padding: 7px 0;
+  border-bottom: 1px solid #e0e7ff; font-size: 0.88rem;
+}
+.repayment-preview-row:last-of-type { border-bottom: none; }
+.repayment-preview-row span  { color: #374151; }
+.repayment-preview-row strong { color: var(--navy); font-family: var(--font-display); }
+
+/* ── Credit Score Estimator Modal ── */
+.credit-calc-modal {
+  background: white; border-radius: var(--radius-lg);
+  padding: 36px; max-width: 560px; width: 94%;
+  box-shadow: 0 20px 60px rgba(13,27,42,0.2);
+  max-height: 88vh; overflow-y: auto;
+}
+.credit-calc-header { margin-bottom: 24px; }
+.credit-calc-header h3 { color: var(--navy); font-family: var(--font-display); margin-bottom: 6px; }
+.credit-calc-header p  { color: #6b7280; font-size: 0.88rem; }
+
+.credit-calc-questions { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
+.credit-question { background: #f8f9ff; border: 1px solid #e5e7eb; border-radius: var(--radius-sm); padding: 14px 16px; }
+.credit-question-text { font-size: 0.88rem; color: var(--navy); font-weight: 600; margin-bottom: 10px; }
+.credit-question-options { display: flex; gap: 8px; }
+.credit-opt {
+  flex: 1; padding: 8px; border: 1.5px solid #e5e7eb; border-radius: var(--radius-sm);
+  background: white; font-family: var(--font-body); font-size: 0.85rem; font-weight: 600;
+  cursor: pointer; transition: var(--transition); color: #374151;
+}
+.credit-opt:hover  { border-color: var(--navy); color: var(--navy); }
+.credit-opt.selected { background: var(--navy); color: white; border-color: var(--navy); }
+
+.credit-result {
+  border-radius: var(--radius-sm); padding: 20px; text-align: center; margin-bottom: 20px;
+}
+.credit-result.good { background: #dcfce7; border: 1px solid #bbf7d0; }
+.credit-result.fair { background: #fef3c7; border: 1px solid #fde68a; }
+.credit-result.poor { background: #fee2e2; border: 1px solid #fecaca; }
+.credit-result-score {
+  font-family: var(--font-display); font-size: 3rem; font-weight: 700; line-height: 1;
+  color: var(--navy);
+}
+.credit-result-label { font-size: 0.85rem; font-weight: 600; color: #374151; margin-top: 6px; }
+
+.credit-calc-actions { display: flex; gap: 12px; justify-content: flex-end; }
